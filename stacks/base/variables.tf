@@ -119,6 +119,7 @@ variable "domain_type" {
 variable "domain_admin_email" {
   description = "Email quản trị viên cho Identity Domain."
   type        = string
+  default = null
 }
 
 variable "custom_matching_rule" {

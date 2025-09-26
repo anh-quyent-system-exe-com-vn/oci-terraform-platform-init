@@ -23,10 +23,6 @@ variable "instance_ids" {
   type        = list(string)
   default     = []
 
-  validation {
-    condition     = var.custom_matching_rule != null || length(var.instance_ids) > 0
-    error_message = "Cần cung cấp instance_ids khi không khai báo custom_matching_rule."
-  }
 }
 
 variable "domain_display_name" {

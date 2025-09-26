@@ -20,7 +20,7 @@ resource "oci_identity_dynamic_group" "instances" {
 
   lifecycle {
     precondition {
-      condition     = local.dynamic_group_matching_rule != null && trim(local.dynamic_group_matching_rule) != ""
+      condition     = trimspace(coalesce(local.dynamic_group_matching_rule, "")) != ""
       error_message = "Dynamic group matching rule không được để trống. Hãy cung cấp instance_ids hoặc custom_matching_rule."
     }
   }
