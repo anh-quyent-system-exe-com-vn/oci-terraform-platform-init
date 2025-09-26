@@ -27,7 +27,8 @@ module "network" {
 
 # Tạo các Compute Instance cho môi trường
 module "compute" {
-  source = "../../modules/compute"
+  source    = "../../modules/compute"
+  providers = { oci = oci }
 
   # Tenancy để tra cứu ảnh, shape... theo region
   tenancy_id          = var.tenancy_ocid
@@ -51,7 +52,8 @@ module "compute" {
 }
 
 module "iam" {
-  source = "../../modules/iam"
+  source    = "../../modules/iam"
+  providers = { oci = oci }
 
   # Tenancy OCID: cần để tạo Dynamic Group/Policy ở cấp tenancy
   tenancy_id                = var.tenancy_ocid
