@@ -1,0 +1,42 @@
+# Ignore SSH keys
+test_key
+test_key.pub
+
+# Ignore GitHub
+*github-pat.txt
+
+# Ignore environment vars
+env/
+env/*
+
+# Bỏ qua file trạng thái dạng local và plan, logs...
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfplan
+
+# Thư mục và file lock terraform
+.terraform/
+.terraform.lock.hcl
+
+# Terraform override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Bỏ qua các file sensitive hoặc tạm thời khác
+*.backup
+*.log
+
+# Các file variables local
+*terraform.tfvars
+*.auto.tfvars
+
+# Nếu dùng IDE như VSCode
+.vscode/
+
+# Nếu dùng các tool testing hoặc linter
+.terrascan/
+.tflint.*
